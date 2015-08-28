@@ -1,13 +1,15 @@
 'use strict';
 
 angular.module('starter')
-.controller('LoginCtrl', function($scope, $timeout, $stateParams, ionicMaterialInk, Auth, $location, $window ) {
+.controller('LoginCtrl', function($scope, $timeout, $stateParams,  Auth, $location, $window ) {
  
-    $scope.$parent.clearFabs();
-    $timeout(function() {
-    $scope.$parent.hideHeader();
-    }, 0);
-    ionicMaterialInk.displayEffect();
+    var url = window.location.href; 
+    if (url.indexOf("ionic") !=-1) {
+      $scope.$parent.clearFabs();
+      $timeout(function() {
+        $scope.$parent.hideHeader();
+      }, 0); 
+    }
  
     $scope.user = {};
     $scope.errors = {};
