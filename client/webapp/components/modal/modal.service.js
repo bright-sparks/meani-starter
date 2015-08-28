@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('IonicApp')
+angular.module('starter')
   .factory('Modal', function ($rootScope, $modal) {
     /**
      * Opens a modal

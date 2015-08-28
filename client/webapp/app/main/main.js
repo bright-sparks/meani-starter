@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('IonicApp')
+angular.module('starter')
   .config(function ($stateProvider) {
     $stateProvider
       .state('main', {

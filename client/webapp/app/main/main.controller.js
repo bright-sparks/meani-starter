@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('IonicApp')
+angular.module('starter')
   .controller('MainCtrl', function ($scope, $http) {
     $scope.awesomeThings = [];
 
