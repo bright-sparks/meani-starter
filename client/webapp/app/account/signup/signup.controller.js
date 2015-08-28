@@ -1,7 +1,14 @@
 'use strict';
 
 angular.module('starter')
-  .controller('SignupCtrl', function ($scope, Auth, $location, $window) {
+  .controller('SignupCtrl', function ($scope, Auth, $location, $window,$timeout,ionicMaterialInk) {
+ 
+    $scope.$parent.clearFabs();
+    $timeout(function() {
+    $scope.$parent.hideHeader();
+    }, 0);
+    ionicMaterialInk.displayEffect();
+
     $scope.user = {};
     $scope.errors = {};
 

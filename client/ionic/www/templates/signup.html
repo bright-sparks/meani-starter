@@ -1,0 +1,36 @@
+<ion-view view-title="Signup" align-title="left">
+  <ion-content style="background: url(img/login2.jpg) center; background-size: cover;">
+      <div class="hero no-header flat">
+          <div class="content">
+              <div class="app-icon"></div>
+              <h1>Sign up for Rentobox</h1>
+          </div>
+      </div>
+      <form class="form padding" name="form" ng-submit="register(form)" novalidate>
+        <div class="list">
+          <div class="form-group" ng-class="{ 'has-success': form.name.$valid && submitted,'has-error': form.name.$invalid && submitted }">
+            <ion-md-input placeholder="Email" highlight-color="balanced" type="email" name="email" ng-model="user.email" required></ion-md-input>
+            <p class="help-block" ng-show="form.name.$error.required && submitted">A name is required</p>
+          </div> 
+          <div class="form-group" ng-class="{ 'has-success': form.password.$valid && submitted, 'has-error': form.password.$invalid && submitted }">
+            <ion-md-input placeholder="Password" highlight-color="energized" type="password" name="password" ng-model="user.password"  ng-minlength="3" required mongoose-error></ion-md-input>
+            <p class="help-block" ng-show="(form.password.$error.minlength || form.password.$error.required) && submitted"> Password must be at least 3 characters. </p>
+            <p class="help-block" ng-show="form.password.$error.mongoose">  {{ errors.password }} </p>
+          </div> 
+        </div>
+        <div class="padding">
+           <button class="button button-full button-assertive ink" type="submit">Sign Up</button>
+        </div>   
+      </form> 
+      <div class="padding signup">
+         <button class="button button-small button-royal ink" href="/login">Login</button>
+      </div>  
+      <div class="button-bar social-login"> 
+          <button ng-click="loginOauth('google')" class="button button-small button-border icon-left ion-social-google button-assertive-900">Google+</button>
+          <button ng-click="loginOauth('twitter')" class="button button-small button-border icon-left ion-social-twitter button-calm-900">Twitter</button>
+          <button ng-click="loginOauth('facebook')" class="button button-small button-border icon-left ion-social-facebook button-positive-900">Facebook</button>
+      </div>
+  </ion-content>
+</ion-view>
+
+ 
