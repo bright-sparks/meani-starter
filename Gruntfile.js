@@ -379,7 +379,7 @@ module.exports = function (grunt) {
     ngtemplates: {
       options: {
         // This should be the name of your apps angular module
-        module: 'starterApp',
+        module: 'IonicApp',
         htmlmin: {
           collapseBooleanAttributes: true,
           collapseWhitespace: true,

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('starterApp')
+angular.module('IonicApp')
   .factory('User', function ($resource) {
     return $resource('/api/users/:id/:controller', {
       id: '@_id'

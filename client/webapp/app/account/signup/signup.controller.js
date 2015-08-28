@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('starterApp')
+angular.module('IonicApp')
   .controller('SignupCtrl', function ($scope, Auth, $location, $window) {
     $scope.user = {};
     $scope.errors = {};

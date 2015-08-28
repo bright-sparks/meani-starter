@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('starterApp')
+angular.module('IonicApp')
   .controller('SettingsCtrl', function ($scope, User, Auth) {
     $scope.errors = {};
 
