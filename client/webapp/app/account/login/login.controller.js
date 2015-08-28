@@ -1,7 +1,14 @@
 'use strict';
 
 angular.module('starter')
-  .controller('LoginCtrl', function ($scope, Auth, $location, $window) {
+.controller('LoginCtrl', function($scope, $timeout, $stateParams, ionicMaterialInk, Auth, $location, $window ) {
+ 
+    $scope.$parent.clearFabs();
+    $timeout(function() {
+    $scope.$parent.hideHeader();
+    }, 0);
+    ionicMaterialInk.displayEffect();
+ 
     $scope.user = {};
     $scope.errors = {};
 
@@ -21,9 +28,9 @@ angular.module('starter')
           $scope.errors.other = err.message;
         });
       }
-    };
-
+    }; 
     $scope.loginOauth = function(provider) {
       $window.location.href = '/auth/' + provider;
     };
-  });
+})
+ 

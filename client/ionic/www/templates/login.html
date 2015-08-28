@@ -1,22 +1,42 @@
 <ion-view view-title="Login" align-title="left">
-    <ion-content style="background: url(img/login2.jpg) center; background-size: cover;">
-        <div class="hero no-header flat">
-            <div class="content">
-                <div class="app-icon"></div>
-                <h1>Rentobox</h1>
-            </div>
-        </div>
+  <ion-content style="background: url(img/login2.jpg) center; background-size: cover;">
+      <div class="hero no-header flat">
+          <div class="content">
+              <div class="app-icon"></div>
+              <h1>Rentobox</h1>
+          </div>
+      </div>
+      <form class="form" name="form" ng-submit="login(form)" novalidate>
         <div class="list">
-            <ion-md-input placeholder="Username" highlight-color="balanced" type="text"></ion-md-input>
-            <ion-md-input placeholder="Password" highlight-color="energized" type="password"></ion-md-input>
+            <ion-md-input placeholder="Email" highlight-color="balanced" type="email" name="email" ng-model="user.email" ></ion-md-input>
+            <ion-md-input placeholder="Password" highlight-color="energized" type="password" name="password" ng-model="user.password"></ion-md-input>
         </div>
         <div class="padding">
-            <button ui-sref="app.profile" class="button button-full button-assertive ink">Login</button>
-        </div>
-        <div class="button-bar social-login">
-            <button class="button button-small button-border icon-left ion-social-google button-assertive-900">Google+</button>
-            <button class="button button-small button-border icon-left ion-social-twitter button-calm-900">Twitter</button>
-            <button class="button button-small button-border icon-left ion-social-facebook button-positive-900">Facebook</button>
-        </div>
-    </ion-content>
+           <button class="button button-full button-assertive ink" type="submit">Login </button>
+        </div>  
+        <div class="form-group has-error">
+          <p class="help-block" ng-show="form.email.$error.required && form.password.$error.required && submitted">
+           Please enter your email and password.
+         </p>
+         <p class="help-block" ng-show="form.email.$error.email && submitted">
+           Please enter a valid email.
+         </p> 
+         <p class="help-block" ng-show="errors.other">{{ errors.other }}</p>
+        </div>  
+       <div class="reset-pass">
+        <a class="reset-pass" href="/resetpass">Forgot Password?</a>
+        </div>  
+      </form> 
+      <div class="padding signup">
+         <button class="button button-small button-royal ink" type="submit">Sign Up</button>
+      </div>  
+      <div class="button-bar social-login">
+
+          <button ng-click="loginOauth('google')" class="button button-small button-border icon-left ion-social-google button-assertive-900">Google+</button>
+          <button ng-click="loginOauth('twitter')" class="button button-small button-border icon-left ion-social-twitter button-calm-900">Twitter</button>
+          <button ng-click="loginOauth('facebook')" class="button button-small button-border icon-left ion-social-facebook button-positive-900">Facebook</button>
+      </div>
+  </ion-content>
 </ion-view>
+
+ 
