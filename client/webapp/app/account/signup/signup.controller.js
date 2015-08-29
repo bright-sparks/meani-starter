@@ -4,7 +4,7 @@ angular.module('starter')
   .controller('SignupCtrl', function ($scope, Auth, $location, $window,$timeout ) {
  
     var url = window.location.href; 
-    if (url.indexOf("ionic") !=-1) {
+    if (url.indexOf('ionic') !==-1) {
       $scope.$parent.clearFabs();
       $timeout(function() {
         $scope.$parent.hideHeader();
@@ -25,7 +25,7 @@ angular.module('starter')
         })
         .then( function() {
           // Account created, redirect to home
-          $location.path('/');
+          $location.path('/dash');
         })
         .catch( function(err) {
           err = err.data;

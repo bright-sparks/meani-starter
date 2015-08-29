@@ -4,7 +4,7 @@ angular.module('starter')
 .controller('LoginCtrl', function($scope, $timeout, $stateParams,  Auth, $location, $window ) {
  
     var url = window.location.href; 
-    if (url.indexOf("ionic") !=-1) {
+    if (url.indexOf('ionic') !==-1) {
       $scope.$parent.clearFabs();
       $timeout(function() {
         $scope.$parent.hideHeader();
@@ -23,8 +23,11 @@ angular.module('starter')
           password: $scope.user.password
         })
         .then( function() {
-          // Logged in, redirect to home
-          $location.path('/');
+          // Logged in, redirect to home 
+           var url = $location.$$url
+           url = url.replace(/\/[^\/]*$/, '/dash')
+           $location.url(url); 
+
         })
         .catch( function(err) {
           $scope.errors.other = err.message;

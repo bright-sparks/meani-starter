@@ -5,11 +5,11 @@ angular.module('starter', [
   'ngResource',
   'ngSanitize',
   'ui.router',
-  'ui.bootstrap' 
+  'ui.bootstrap',
+  'ionic-material' 
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
-    $urlRouterProvider
-      .otherwise('/');
+    $urlRouterProvider.otherwise('/');
 
     $locationProvider.html5Mode(true);
     $httpProvider.interceptors.push('authInterceptor');

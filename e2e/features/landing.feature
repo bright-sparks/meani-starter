@@ -1,4 +1,4 @@
-Feature: Features Page
+Feature: Landing Page
   As Visitor
   I want to understand what rentobox is and why it's done
 

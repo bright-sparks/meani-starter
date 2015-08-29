@@ -1,0 +1,40 @@
+<ion-view view-title="Dashboard">
+    <ion-content ng-class="{expanded:$scope.isExpanded}">
+        <div class="hero slide-up" style="background-image: url('img/login2.jpg');background-repeat: repeat-y;">
+            <div class="content">
+                <div class="avatar" style="background-image: url('img/tyrion.jpg');"></div>
+                <h3><a class="dark">{{ getCurrentUser().name }}</a></h3>
+                <h5><a class="dark">Rentobox User</a> </h4>
+            </div>
+        </div>
+        <div class="tabs tabs-dark tabs-icon-top static">
+            <a ui-sref="app.activity" class="tab-item">
+                <i class="icon ion-calendar"></i> Calendar
+            </a>
+            <a ui-sref="app.friends" class="tab-item">
+                <i class="icon ion-key"></i> Bookings
+            </a>
+            <a ui-sref="app.gallery" class="tab-item">
+                <i class="icon ion-wand"></i> Services
+            </a>
+        </div>
+        <h4 class="content padding double-padding-x">Activity</h4> 
+         <div class="item card-item">
+            <div ui-sref="app.gallery" class="card stable-bg ink ink-dark">
+                <div class="item item-avatar item-text-wrap">
+                    <span class="avatar" style="background-image: url('img/jon-snow.jpg');"></span>
+                    <strong>Jon Snow</strong> booked Rentobox1 between 19.08.2016 - 21.08.2016
+                </div>
+            </div>
+        </div>
+        <div class="item card-item">
+            <div ui-sref="app.gallery" class="card stable-bg ink ink-dark">
+                <div class="item item-avatar item-text-wrap">
+                    <span class="avatar" style="background-image: url('img/daenerys.jpg');"></span>
+                    <strong>Alicia Pale</strong> accessed Rentobox1
+                </div>
+            </div>
+        </div>
+ 
+    </ion-content>
+</ion-view>

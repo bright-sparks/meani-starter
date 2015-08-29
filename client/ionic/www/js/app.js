@@ -4,9 +4,9 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material','ionMdInput','ngCookies','ngResource'])
+angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material','ionMdInput','ngCookies','ngResource', 'ui.router'])
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform,$rootScope, $location, Auth) {
 	$ionicPlatform.ready(function() {
 		// Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
 		// for form inputs)
@@ -18,17 +18,48 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material','ion
 			StatusBar.styleDefault();
 		}
 	});
+
+  $rootScope.$on('$stateChangeStart', function (event, next) {
+    Auth.isLoggedInAsync(function(loggedIn) {
+      if (next.authenticate && !loggedIn) {
+        $location.path('/login');
+      }
+    });
+  }); 
+
 })
 
-.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
+.factory('authInterceptor', function ($rootScope, $q, $cookieStore, $location) {
+  return {
+    // Add authorization token to headers
+    request: function (config) {
+      config.headers = config.headers || {};
+      if ($cookieStore.get('token')) {
+        config.headers.Authorization = 'Bearer ' + $cookieStore.get('token');
+      }
+      return config;
+    },
 
-	// Turn off caching for demo simplicity's sake
+    // Intercept 401s and redirect you to login
+    responseError: function(response) {
+      if(response.status === 401) {
+        $location.path('/login');
+        // remove any stale tokens
+        $cookieStore.remove('token');
+        return $q.reject(response);
+      }
+      else {
+        return $q.reject(response);
+      }
+    }
+  };
+}) 
+ 
+
+.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider, $locationProvider, $httpProvider) {
 	$ionicConfigProvider.views.maxCache(0);
-
-	/*
-	// Turn off back button text
-	$ionicConfigProvider.backButton.previousTitleText(false);
-	*/
+ 
+  $httpProvider.interceptors.push('authInterceptor');
 
 	$stateProvider.state('app', {
 		url: '/app',
@@ -36,24 +67,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material','ion
 		templateUrl: 'templates/menu.html',
 		controller: 'AppCtrl'
 	})
-
-	.state('app.activity', {
-		url: '/activity',
-		views: {
-			'menuContent': {
-				templateUrl: 'templates/activity.html',
-				controller: 'ActivityCtrl'
-			},
-			'fabContent': {
-				template: '<button id="fab-activity" class="button button-fab button-fab-top-right expanded button-energized-900 flap"><i class="icon ion-paper-airplane"></i></button>',
-				controller: function ($timeout) {
-					$timeout(function () {
-						document.getElementById('fab-activity').classList.toggle('on');
-					}, 200);
-				}
-			}
-		}
-	})
+ 
 
 	.state('app.friends', {
 		url: '/friends',
@@ -117,24 +131,19 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material','ion
 	})
 
 
-	.state('app.profile', {
-		url: '/profile',
+	.state('app.dash', {
+		url: '/dash',
+		authenticate: true,
 		views: {
 			'menuContent': {
-				templateUrl: 'templates/profile.html',
-				controller: 'ProfileCtrl'
+				templateUrl: 'templates/dash.html',
+				controller: 'DashCtrl' 
 			},
 			'fabContent': {
-				template: '<button id="fab-profile" class="button button-fab button-fab-bottom-right button-energized-900"><i class="icon ion-plus"></i></button>',
-				controller: function ($timeout) {
-					/*$timeout(function () {
-						document.getElementById('fab-profile').classList.toggle('on');
-					}, 800);*/
-				}
+				template: ''
 			}
 		}
 	})
-	;
 
 	// if none of the above states are matched, use this as the fallback
 	$urlRouterProvider.otherwise('/app/login');

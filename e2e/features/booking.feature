@@ -15,3 +15,10 @@
 #     And visitor should get an access code by sms
 #     And I should see the access code
 
+
+
+# Add booking
+# Import Booking
+# Cancel booking
+# Edit booking
+

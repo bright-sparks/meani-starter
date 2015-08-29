@@ -3,7 +3,7 @@
 
 angular.module('starter.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, $ionicPopover, $timeout) {
+.controller('AppCtrl', function($scope, $ionicModal, $ionicPopover, $timeout,$location, Auth) {
     // Form data for the login modal
     $scope.loginData = {};
     $scope.isExpanded = false;
@@ -83,6 +83,20 @@ angular.module('starter.controllers', [])
             fabs[0].remove();
         }
     };
+ 
+    $scope.isLoggedIn = Auth.isLoggedIn;
+    $scope.isAdmin = Auth.isAdmin;
+    $scope.getCurrentUser = Auth.getCurrentUser;
+
+    $scope.logout = function() {
+      Auth.logout();
+      $location.path('/login');
+    };
+
+    $scope.isActive = function(route) {
+      return route === $location.path();
+    };
+
 })
 
 .controller('FriendsCtrl', function($scope, $stateParams, $timeout, ionicMaterialInk, ionicMaterialMotion) {
@@ -103,32 +117,7 @@ angular.module('starter.controllers', [])
     // Set Ink
     ionicMaterialInk.displayEffect();
 })
-
-.controller('ProfileCtrl', function($scope, $stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk) {
-    // Set Header
-    $scope.$parent.showHeader();
-    $scope.$parent.clearFabs();
-    $scope.isExpanded = false;
-    $scope.$parent.setExpanded(false);
-    $scope.$parent.setHeaderFab(false);
-
-    // Set Motion
-    $timeout(function() {
-        ionicMaterialMotion.slideUp({
-            selector: '.slide-up'
-        });
-    }, 300);
-
-    $timeout(function() {
-        ionicMaterialMotion.fadeSlideInRight({
-            startVelocity: 3000
-        });
-    }, 700);
-
-    // Set Ink
-    ionicMaterialInk.displayEffect();
-})
-
+ 
 .controller('ActivityCtrl', function($scope, $stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk) {
     $scope.$parent.showHeader();
     $scope.$parent.clearFabs();
