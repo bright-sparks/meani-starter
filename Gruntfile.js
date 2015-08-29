@@ -1,4 +1,4 @@
-// Generated on 2015-01-08 using generator-angular-fullstack-ionic 2.0.13
+  // Generated on 2015-01-08 using generator-angular-fullstack-ionic 2.0.13
 'use strict';
 
 module.exports = function (grunt) {
@@ -21,6 +21,7 @@ module.exports = function (grunt) {
 
   // Time how long tasks take. Can help when optimizing build times
   require('time-grunt')(grunt);
+  grunt.loadNpmTasks('grunt-node-inspector');
 
   // Define the configuration for all the tasks
   grunt.initConfig({
