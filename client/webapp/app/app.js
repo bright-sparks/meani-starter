@@ -50,4 +50,16 @@ angular.module('starter', [
         }
       });
     });
+    $rootScope.isMobileApp = function() {
+      var isCordovaApp = document.URL.indexOf('http://') === -1
+      && document.URL.indexOf('https://') === -1;
+      var isMobileView = $location.path().indexOf('ionic') === -1
+       if (isCordovaApp && isMobileView)  {
+          return true;
+       } else {
+          return false;
+       }
+    };
+
+
   });
