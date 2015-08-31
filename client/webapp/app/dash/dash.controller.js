@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('starter')
-  .controller('DashCtrl', function ($scope, $http,$stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk) {
+  .controller('DashCtrl', function ($scope, $http,$stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk, Auth) {
 
     var url = window.location.href; 
       if (url.indexOf("ionic") !=-1) {
@@ -29,5 +29,8 @@ angular.module('starter')
       ionicMaterialInk.displayEffect();
 
     }
+
+    $scope.isLoggedIn = Auth.isLoggedIn;
+ 
   });
  

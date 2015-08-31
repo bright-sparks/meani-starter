@@ -60,6 +60,10 @@ angular.module('starter', [
           return false;
        }
     };
-
+    $rootScope.hybridRedirect = function(path) {
+       var url = $location.$$url
+       url = url.replace(/\/[^\/]*$/, ('/' + path))
+       $location.url(url); 
+    }; 
 
   });

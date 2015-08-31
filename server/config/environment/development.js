@@ -22,8 +22,8 @@ module.exports = {
   },
 
   google: {
-    clientID:     process.env.GOOGLE_ID || 'id',
-    clientSecret: process.env.GOOGLE_SECRET || 'secret',
+    clientID:     '470523285933-o0c96q3na7e72obk6gdpsg9chherg674.apps.googleusercontent.com' || 'id',
+    clientSecret: 'v6mjH94h6xWYPdkZ5U-DYgz3' || 'secret',
     callbackURL:  (process.env.DOMAIN || '') + '/auth/google/callback'
   },
 

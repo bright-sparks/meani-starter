@@ -1,7 +1,11 @@
 'use strict';
 
 angular.module('starter')
-.controller('LoginCtrl', function($scope, $timeout, $stateParams,  Auth, $location, $window ) {
+.controller('LoginCtrl', function($scope,$rootScope, $timeout, $stateParams,  Auth, $location, $window ) {
+
+   if (Auth.isLoggedIn() === true) {
+     $scope.hybridRedirect("dash");
+   }
  
     var url = window.location.href; 
     if (url.indexOf('ionic') !==-1) {
@@ -23,11 +27,7 @@ angular.module('starter')
           password: $scope.user.password
         })
         .then( function() {
-          // Logged in, redirect to home 
-           var url = $location.$$url
-           url = url.replace(/\/[^\/]*$/, '/dash')
-           $location.url(url); 
-
+          $scope.hybridRedirect("dash"); 
         })
         .catch( function(err) {
           $scope.errors.other = err.message;
