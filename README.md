@@ -5,7 +5,7 @@
 
 ## Installation
 ```bash
-npm install
+sudo npm install
 ```
 ```bash
 bower install 
@@ -17,7 +17,6 @@ bower install
 grunt serve
 ```
 
-## Usage
-I'm actively developing it so there are still things to do and a lot more to DRY out. My goal is to share all code between webapp and ionic app except the templates, app.js and index.html.  I'll be developing it until it has to be private.
-By the way Express server recognises the device type, so if you socially login using the ionic app on chrome it won't redirect you to ionic app's dashboard. It works on iphone and android simulators though. 
+## Note
+I'm actively developing it so there are still things to do, refactor and DRY out. My goal is to create a fully test covered(BDD+TDD) working app that shares the same frontend controller/services between web and ionic apps. By the way, Express server recognises the device type to redirect after auth, so if you socially login using the ionic app on chrome it won't redirect you to ionic app's dashboard. It works on iphone and android simulators though. 
  
