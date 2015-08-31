@@ -13,6 +13,7 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(client) app/vendor.css -->
       <!-- bower:css -->
+      <link rel="stylesheet" href="bower_components/fullcalendar/dist/fullcalendar.css" />
       <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css({.tmp,client}) app/app.css -->
@@ -56,6 +57,9 @@
       <script src="bower_components/angular-cookies/angular-cookies.js"></script>
       <script src="bower_components/angular-resource/angular-resource.js"></script>
       <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+      <script src="bower_components/moment/moment.js"></script>
+      <script src="bower_components/fullcalendar/dist/fullcalendar.js"></script>
+      <script src="bower_components/angular-ui-calendar/src/calendar.js"></script>
       <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
       <script src="bower_components/lodash/dist/lodash.compat.js"></script>
       <!-- endbower -->
@@ -70,12 +74,19 @@
             <script src="webapp/app/account/signup/signup.controller.js"></script>
             <script src="webapp/app/admin/admin.controller.js"></script>
             <script src="webapp/app/admin/admin.js"></script>
+            <script src="webapp/app/bookings/bookings.controller.js"></script>
+            <script src="webapp/app/bookings/bookings.js"></script>
+            <script src="webapp/app/calendar/calendar.controller.js"></script>
+            <script src="webapp/app/calendar/calendar.js"></script>
             <script src="webapp/app/dash/dash.controller.js"></script>
             <script src="webapp/app/dash/dash.js"></script>
             <script src="webapp/app/main/main.controller.js"></script>
             <script src="webapp/app/main/main.js"></script>
+            <script src="webapp/app/services/services.controller.js"></script>
+            <script src="webapp/app/services/services.js"></script>
             <script src="webapp/components/auth/auth.service.js"></script>
             <script src="webapp/components/auth/user.service.js"></script>
+            <script src="webapp/components/calendar/calendar.service.js"></script>
             <script src="webapp/components/modal/modal.service.js"></script>
             <script src="webapp/components/mongoose-error/mongoose-error.directive.js"></script>
             <script src="webapp/components/navbar/navbar.controller.js"></script>

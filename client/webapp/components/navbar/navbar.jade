@@ -6,12 +6,16 @@ div.navbar.navbar-default.navbar-static-top(ng-controller='NavbarCtrl')
         span.icon-bar
         span.icon-bar
         span.icon-bar
-      a.navbar-brand(href='/') Starter
+      a.navbar-brand(href='/') Rentobox
 
     div#navbar-main.navbar-collapse.collapse(collapse='isCollapsed')
       ul.nav.navbar-nav
-        li(ng-repeat='item in menu', ng-class='{active: isActive(item.link)}')
-          a(ng-href='{{item.link}}') {{item.title}}
+        li(ng-show='isLoggedIn()')
+          a(href='/calendar') Calendar
+        li(ng-show='isLoggedIn()')
+          a(href='/bookings') Bookings
+        li(ng-show='isLoggedIn()')
+          a(href='/services') Services
 
         li(ng-show='isAdmin()', ng-class='{active: isActive("/admin")}')
           a(href='/admin') Admin

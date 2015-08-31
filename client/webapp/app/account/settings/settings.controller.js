@@ -1,12 +1,11 @@
 'use strict';
 
 angular.module('starter')
-  .controller('SettingsCtrl', function ($scope, User, Auth,$stateParams, $timeout, ionicMaterialInk, ionicMaterialMotion) {
+  .controller('SettingsCtrl', function ($scope, User, $rootScope, Auth,$stateParams, $timeout, ionicMaterialInk, ionicMaterialMotion) {
     $scope.errors = {};
     $scope.user = Auth.getCurrentUser; 
  
-    var url = window.location.href; 
-    if (url.indexOf('ionic') !==-1) {
+    if ($scope.isMobileApp() ===true) {
       $scope.$parent.showHeader();
       $scope.$parent.clearFabs();
       $scope.$parent.setHeaderFab('left');

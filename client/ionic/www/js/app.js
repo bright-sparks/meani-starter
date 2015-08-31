@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material','ionMdInput','ngCookies','ngResource', 'ui.router'])
+angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material','ionMdInput','ngCookies','ngResource', 'ui.router','ui.calendar'])
 
 .run(function($ionicPlatform,$rootScope, $location, Auth) {
 	$ionicPlatform.ready(function() {
@@ -99,12 +99,50 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material','ion
 		}
 	})
 
-	.state('app.gallery', {
-		url: '/gallery',
+	.state('app.calendar', {
+		url: '/calendar',
 		views: {
 			'menuContent': {
-				templateUrl: 'templates/gallery.html',
-				controller: 'GalleryCtrl'
+				templateUrl: 'templates/calendar.html',
+				controller: 'CalendarCtrl'
+			},
+			'fabContent': {
+				template: '' 
+				}
+			} 
+		})
+
+	.state('app.services', {
+		url: '/services',
+		views: {
+			'menuContent': {
+				templateUrl: 'templates/services.html',
+				controller: 'ServicesCtrl'
+			},
+			'fabContent': {
+				template: '' 
+				}
+			} 
+		})
+
+	.state('app.bookings', {
+		url: '/bookings',
+		views: {
+			'menuContent': {
+				templateUrl: 'templates/bookings.html',
+				controller: 'BookingsCtrl'
+			},
+			'fabContent': {
+				template: '' 
+				}
+			} 
+		})
+
+	.state('app.booking', {
+		url: '/booking',
+		views: {
+			'menuContent': {
+				templateUrl: 'templates/booking.html' 
 			},
 			'fabContent': {
 				template: '' 
@@ -135,9 +173,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material','ion
 				template: ''
 			}
 		}
-	})
-
-
+	}) 
 	.state('app.dash', {
 		url: '/dash',
 		authenticate: true,

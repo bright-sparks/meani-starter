@@ -67,10 +67,11 @@ function setTokenCookie(req, res) {
   if (!req.user) return res.status(404).json({ message: 'Something went wrong, please try again.'});
   var token = signToken(req.user._id, req.user.role);
   res.cookie('token', JSON.stringify(token));
-  //res.redirect('/ionic/#/app/dash');
-
+ 
   if (is_desktop) {
     res.redirect('/dash');
+  } else {
+    res.redirect('/ionic/#/app/dash');
   }
 }
 
