@@ -23,5 +23,5 @@ angular.module('starter')
           deferredEventos.resolve(eventos);
           return deferredEventos.promise;
         },
-    }
+    };
   });

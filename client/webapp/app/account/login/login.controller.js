@@ -4,7 +4,7 @@ angular.module('starter')
 .controller('LoginCtrl', function($scope,$rootScope, $timeout, $stateParams,  Auth, $location, $window ) {
 
    if (Auth.isLoggedIn() === true) {
-     $scope.hybridRedirect("dash");
+     $scope.hybridRedirect('dash');
    }
  
     var url = window.location.href; 
@@ -27,7 +27,7 @@ angular.module('starter')
           password: $scope.user.password
         })
         .then( function() {
-          $scope.hybridRedirect("dash"); 
+          $scope.hybridRedirect('dash'); 
         })
         .catch( function(err) {
           $scope.errors.other = err.message;
@@ -37,5 +37,5 @@ angular.module('starter')
     $scope.loginOauth = function(provider) {
       $window.location.href = '/auth/' + provider;
     };
-})
+});
  

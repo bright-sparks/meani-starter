@@ -6,8 +6,7 @@ angular.module('starter', [
   'ngSanitize',
   'ui.router',
   'ui.bootstrap',
-  'ui.calendar',
-  'ionic-material'
+  'ui.calendar' 
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
     $urlRouterProvider.otherwise('/');
@@ -52,9 +51,8 @@ angular.module('starter', [
       });
     });
     $rootScope.isMobileApp = function() {
-      var isCordovaApp = document.URL.indexOf('http://') === -1
-      && document.URL.indexOf('https://') === -1;
-      var isMobileView = $location.path().indexOf('ionic') === -1
+      var isCordovaApp = document.URL.indexOf('http://') === -1  && document.URL.indexOf('https://') === -1;
+      var isMobileView = $location.path().indexOf('ionic') === -1;
        if (isCordovaApp && isMobileView)  {
           return true;
        } else {
@@ -62,8 +60,8 @@ angular.module('starter', [
        }
     };
     $rootScope.hybridRedirect = function(path) {
-       var url = $location.$$url
-       url = url.replace(/\/[^\/]*$/, ('/' + path))
+       var url = $location.$$url;
+       url = url.replace(/\/[^\/]*$/, ('/' + path));
        $location.url(url); 
     }; 
 

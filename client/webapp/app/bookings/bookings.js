@@ -14,5 +14,5 @@ angular.module('starter')
         templateUrl: 'app/bookings/booking.html',
         authenticate: true
       });
-  })
+  });
  

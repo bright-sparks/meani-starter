@@ -9,5 +9,5 @@ angular.module('starter')
         controller: 'DashCtrl',
         authenticate: true
       });
-  })
+  });
  

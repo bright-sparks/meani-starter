@@ -13,7 +13,6 @@ angular.module('starter')
         $scope.isExpanded = true;
         $scope.$parent.setExpanded(true);
     }, 300);
-  };
-   
+  }
 });
  

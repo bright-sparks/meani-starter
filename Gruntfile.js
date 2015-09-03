@@ -465,7 +465,8 @@ module.exports = function (grunt) {
         dest: 'dist-ionic/www',
         expand: true
       }
-    }, 
+    },
+
     buildcontrol: {
       options: {
         dir: 'dist',
