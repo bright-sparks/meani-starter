@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for rentobox/server/api/thing/thing.controller.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../../../prettify.css">
+    <link rel="stylesheet" href="../../../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header low">
+    <h1>Code coverage report for <span class="entity">rentobox/server/api/thing/thing.controller.js</span></h1>
+    <h2>
+        Statements: <span class="metric">25% <small>(11 / 44)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">4.55% <small>(1 / 22)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">15.38% <small>(2 / 13)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">33.33% <small>(11 / 33)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../../../index.html">All files</a> &#187; <a href="index.html">rentobox/server/api/thing/</a> &#187; thing.controller.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * Using Rails-like standard naming convention for endpoints.
+ * GET     /things              -&gt;  index
+ * POST    /things              -&gt;  create
+ * GET     /things/:id          -&gt;  show
+ * PUT     /things/:id          -&gt;  update
+ * DELETE  /things/:id          -&gt;  destroy
+ */
+&nbsp;
+'use strict';
+&nbsp;
+var _ = require('lodash');
+var Thing = require('./thing.model');
+&nbsp;
+// Get list of things
+exports.index = function(req, res) {
+  Thing.find(function (err, things) {
+    <span class="missing-if-branch" title="if path not taken" >I</span>if(err) { <span class="cstat-no" title="statement not covered" >return handleError(res, err); </span>}
+    return res.status(200).json(things);
+  });
+};
+&nbsp;
+// Get a single thing
+exports.show = <span class="fstat-no" title="function not covered" >function(req, res) {</span>
+<span class="cstat-no" title="statement not covered" >  Thing.findById(req.params.id, <span class="fstat-no" title="function not covered" >function (err, thing) {</span></span>
+<span class="cstat-no" title="statement not covered" >    if(err) { <span class="cstat-no" title="statement not covered" >return handleError(res, err); </span>}</span>
+<span class="cstat-no" title="statement not covered" >    if(!thing) { <span class="cstat-no" title="statement not covered" >return res.status(404).send('Not Found'); </span>}</span>
+<span class="cstat-no" title="statement not covered" >    return res.json(thing);</span>
+  });
+};
+&nbsp;
+// Creates a new thing in the DB.
+exports.create = <span class="fstat-no" title="function not covered" >function(req, res) {</span>
+<span class="cstat-no" title="statement not covered" >  Thing.create(req.body, <span class="fstat-no" title="function not covered" >function(err, thing) {</span></span>
+<span class="cstat-no" title="statement not covered" >    if(err) { <span class="cstat-no" title="statement not covered" >return handleError(res, err); </span>}</span>
+<span class="cstat-no" title="statement not covered" >    return res.status(201).json(thing);</span>
+  });
+};
+&nbsp;
+// Updates an existing thing in the DB.
+exports.update = <span class="fstat-no" title="function not covered" >function(req, res) {</span>
+<span class="cstat-no" title="statement not covered" >  if(req.body._id) { <span class="cstat-no" title="statement not covered" >delete req.body._id; </span>}</span>
+<span class="cstat-no" title="statement not covered" >  Thing.findById(req.params.id, <span class="fstat-no" title="function not covered" >function (err, thing) {</span></span>
+<span class="cstat-no" title="statement not covered" >    if (err) { <span class="cstat-no" title="statement not covered" >return handleError(res, err); </span>}</span>
+<span class="cstat-no" title="statement not covered" >    if(!thing) { <span class="cstat-no" title="statement not covered" >return res.status(404).send('Not Found'); </span>}</span>
+<span class="cstat-no" title="statement not covered" >    var updated = _.merge(thing, req.body);</span>
+<span class="cstat-no" title="statement not covered" >    updated.save(<span class="fstat-no" title="function not covered" >function (err) {</span></span>
+<span class="cstat-no" title="statement not covered" >      if (err) { <span class="cstat-no" title="statement not covered" >return handleError(res, err); </span>}</span>
+<span class="cstat-no" title="statement not covered" >      return res.status(200).json(thing);</span>
+    });
+  });
+};
+&nbsp;
+// Deletes a thing from the DB.
+exports.destroy = <span class="fstat-no" title="function not covered" >function(req, res) {</span>
+<span class="cstat-no" title="statement not covered" >  Thing.findById(req.params.id, <span class="fstat-no" title="function not covered" >function (err, thing) {</span></span>
+<span class="cstat-no" title="statement not covered" >    if(err) { <span class="cstat-no" title="statement not covered" >return handleError(res, err); </span>}</span>
+<span class="cstat-no" title="statement not covered" >    if(!thing) { <span class="cstat-no" title="statement not covered" >return res.status(404).send('Not Found'); </span>}</span>
+<span class="cstat-no" title="statement not covered" >    thing.remove(<span class="fstat-no" title="function not covered" >function(err) {</span></span>
+<span class="cstat-no" title="statement not covered" >      if(err) { <span class="cstat-no" title="statement not covered" >return handleError(res, err); </span>}</span>
+<span class="cstat-no" title="statement not covered" >      return res.status(204).send('No Content');</span>
+    });
+  });
+};
+&nbsp;
+<span class="fstat-no" title="function not covered" >function handleError(res, err) {</span>
+<span class="cstat-no" title="statement not covered" >  return res.status(500).send(err);</span>
+}</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Sep 02 2015 14:55:24 GMT+0300 (EEST)</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

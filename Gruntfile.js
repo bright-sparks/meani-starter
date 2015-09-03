@@ -467,6 +467,26 @@ module.exports = function (grunt) {
       }
     },
 
+    connect: {
+      options: {
+        port: 9000,
+        // Change this to '0.0.0.0' to access the server from outside.
+        hostname: 'localhost'
+      },
+      dist: {
+        options: {
+          base: '<%= yeoman.dist %>'
+        }
+      },
+      coverage: {
+        options: {
+          port: 9002,
+          open: true,
+          base: ['coverage']
+        }
+      }
+    },
+
     buildcontrol: {
       options: {
         dir: 'dist',
