@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('starter')
-  .controller('SettingsCtrl', function ($scope, User, $rootScope, Auth,$stateParams, $timeout, ionicMaterialInk, ionicMaterialMotion) {
+  .controller('SettingsCtrl', function ($scope, User, $rootScope, Auth,$stateParams, $timeout ) {
     $scope.errors = {};
     $scope.user = Auth.getCurrentUser; 
  
@@ -15,9 +15,7 @@ angular.module('starter')
           $scope.isExpanded = true;
           $scope.$parent.setExpanded(true);
       }, 300);
-
-      // Set Motion
-      ionicMaterialMotion.fadeSlideInRight(); 
+ 
     }
 
 

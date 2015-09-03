@@ -21,10 +21,11 @@ var mongoose = require('mongoose');
 
 module.exports = function(app) {
   var env = app.get('env');
-
-  var device = require('express-device');
+ 
   app.set('views', config.root + '/server/views');
   app.set('view engine', 'jade');
+
+  
  
 
 
@@ -34,9 +35,7 @@ module.exports = function(app) {
   app.use(methodOverride());
   app.use(cookieParser());
   app.use(passport.initialize());
-
-  app.use(device.capture());
-
+ 
   // Persist sessions with mongoStore
   // We need to enable sessions for passport twitter because its an oauth 1.0 strategy
   app.use(session({

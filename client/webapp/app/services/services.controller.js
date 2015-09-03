@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('starter')
-  .controller('ServicesCtrl', function ($scope, User, $rootScope, Auth,$stateParams, $timeout, ionicMaterialInk, ionicMaterialMotion) {
+  .controller('ServicesCtrl', function ($scope, $rootScope, $stateParams, $timeout) {
    
   if ($scope.isMobileApp() ===true) {
     $scope.$parent.showHeader();

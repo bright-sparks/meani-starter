@@ -68,7 +68,10 @@ function setTokenCookie(req, res) {
   var token = signToken(req.user._id, req.user.role);
   res.cookie('token', JSON.stringify(token));
  
-  if (is_desktop) {
+  var MobileDetect = require('mobile-detect'),
+  md = new MobileDetect(req.headers['user-agent']);
+  
+  if (md.mobile()===null) {
     res.redirect('/dash');
   } else {
     res.redirect('/ionic/#/app/dash');

@@ -6,7 +6,8 @@ angular.module('starter', [
   'ngSanitize',
   'ui.router',
   'ui.bootstrap',
-  'ui.calendar' 
+  'ui.calendar',
+  'ionic-material'
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
     $urlRouterProvider.otherwise('/');
