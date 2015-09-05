@@ -10,8 +10,8 @@ module.exports = {
 
 
   facebook: {
-    clientID:     '1490205011293309',
-    clientSecret: '967a268d6319805afd4f0b6618440ccc',
+    clientID:     process.env.FACEBOOK_ID,
+    clientSecret: process.env.FACEBOOK_SECRET,
     callbackURL:  (process.env.DOMAIN || '') + '/auth/facebook/callback'
   },
 
@@ -22,8 +22,8 @@ module.exports = {
   },
 
   google: {
-    clientID:     '470523285933-o0c96q3na7e72obk6gdpsg9chherg674.apps.googleusercontent.com' || 'id',
-    clientSecret: 'v6mjH94h6xWYPdkZ5U-DYgz3' || 'secret',
+    clientID:     process.env.GOOGLE_ID || 'id',
+    clientSecret: process.env.GOOGLE_SECRET || 'secret',
     callbackURL:  (process.env.DOMAIN || '') + '/auth/google/callback'
   },
 
