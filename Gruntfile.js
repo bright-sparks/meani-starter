@@ -402,7 +402,7 @@ module.exports = function (grunt) {
         cwd: '.tmp',
         src: ['{app,components}/**/*.html'],
         dest: '.tmp/tmp-templates.js'
-      }
+      } //
     },
     // TODO (Future): Do ngtemplates (grunt-angular-templates) for Ionic as well
 
