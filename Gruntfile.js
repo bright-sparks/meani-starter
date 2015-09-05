@@ -394,7 +394,7 @@ module.exports = function (grunt) {
       },
       // TODO: Include common here (i.e. in cwd) - required for build task to work properly
       main: {
-        cwd: '<%= yeoman.clientDesktop %>',
+        cwd: '<%= yeoman.clientWebapp %>',
         src: ['{app,components}/**/*.html'],
         dest: '.tmp/templates.js'
       },
@@ -420,7 +420,7 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           dot: true,
-          cwd: '<%= yeoman.clientDesktop %>',
+          cwd: '<%= yeoman.clientWebapp %>',
           dest: '<%= yeoman.dist %>/public',
           src: [
             '*.{ico,png,txt}',
@@ -448,7 +448,7 @@ module.exports = function (grunt) {
       // TODO: Not sure if styles target is used anywhere?
       styles: {
         expand: true,
-        cwd: '<%= yeoman.clientDesktop %>',
+        cwd: '<%= yeoman.clientWebapp %>',
         dest: '.tmp/',
         src: ['{app,components}/**/*.css']
       },

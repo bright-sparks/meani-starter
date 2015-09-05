@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('starter')
-  .controller('CalendarCtrl', function ($scope, $ionicSlideBoxDelegate,CalendarService,  $rootScope, Auth,$stateParams, $timeout ) {
+angular.module('starter') //$ionicSlideBoxDelegate,
+  .controller('CalendarCtrl', function ($scope, CalendarService,  $rootScope, Auth,$stateParams, $timeout ) {
     $scope.errors = {};
     $scope.user = Auth.getCurrentUser; 
  
