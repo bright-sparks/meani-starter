@@ -341,7 +341,7 @@ module.exports = function (grunt) {
         // Include common
         files: [{
           expand: true,
-          cwd: '<%= yeoman.clientWebapp %>/assets/images',
+          cwd: '<%= yeoman.clientCommon %>/assets/images',
           src: '{,*/}*.{png,jpg,jpeg,gif}',
           dest: '<%= yeoman.dist %>/public/assets/images'
         }]
@@ -354,7 +354,7 @@ module.exports = function (grunt) {
         // Include common
         files: [{
           expand: true,
-          cwd: '<%= yeoman.clientWebapp %>/assets/images',
+          cwd: '<%= yeoman.clientCommon %>/assets/images',
           src: '{,*/}*.svg',
           dest: '<%= yeoman.dist %>/public/assets/images'
         }]
@@ -426,8 +426,8 @@ module.exports = function (grunt) {
             '*.{ico,png,txt}',
             '.htaccess',
             'bower_components/**/*',
-            'assets/images/{,*/}*.{webp}',
-            'assets/fonts/**/*',
+            'common/assets/images/{,*/}*.{webp}',
+            'common/assets/fonts/**/*',
             'index.html'
           ]
         }, {
