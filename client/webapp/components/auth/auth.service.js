@@ -10,7 +10,7 @@ angular.module('starter')
     return {
 
       /**
-       * Authenticate user and save token
+       * Authenticate user and save token //
        *
        * @param  {Object}   user     - login info
        * @param  {Function} callback - optional
